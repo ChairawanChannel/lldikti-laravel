@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
@@ -22,12 +22,13 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
     <title>Dashboard - Tamu</title>
   </head>
-  <body class="no-background">
+<body>
+<body class="no-background">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
-          <img src="{{ asset('images/lldikti1.png') }}" alt="Logo" height="30" />
+          <img src="/assets/images/lldikti1.png" alt="Logo" height="30" />
         </a>
         <button
           class="navbar-toggler"
@@ -43,17 +44,20 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#"
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="/user/dashboard.html"
                 >Dashboard</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{ route('buat-permohonan') }}"
+              <a class="nav-link" href="/user/buat-permohonan.html"
                 >Buat Permohonan</a
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Profile</a>
+              <a class="nav-link" href="/user/profile.html">Profile</a>
             </li>
           </ul>
           <ul class="navbar-nav">
@@ -72,13 +76,12 @@
                 class="dropdown-menu dropdown-menu-end"
                 aria-labelledby="navbarDropdown"
               >
-                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li>
+                  <a class="dropdown-item" href="/user/profile.html">Profile</a>
+                </li>
                 <li><hr class="dropdown-divider" /></li>
                 <li>
-                  <form method="POST" action="{{ route('logout') }}">
-                    @csrf
-                    <button type="submit" class="dropdown-item">Logout</button>
-                  </form>
+                  <a class="dropdown-item" href="/user/logout.html">Logout</a>
                 </li>
               </ul>
             </li>
@@ -86,121 +89,73 @@
         </div>
       </div>
     </nav>
-    <!-- Dashboard Menu -->
+    <!-- form permohonan dengan 3 step, 1 pilih jenis premohonan -->
     <div class="container mt-5">
-      <h1>Dashboard</h1>
-      <div class="table-responsive">
-        <table id="example" class="table table-striped" style="width: 100%">
-          <thead>
-            <tr>
-              <th>No</th>
-              <th>Jenis Pengajuan</th>
-              <th>Tgl Buat</th>
-              <th>Tgl Pengajuan</th>
-              <th>Status</th>
-              <th>Aksi</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Perubahan Data Mahasiswa</td>
-              <td>2023-01-01</td>
-              <td>2023-01-05</td>
-              <td><span class="badge bg-warning">Pending</span></td>
-              <td>
-                <a href="/user/detail-permohonan.html" class="btn btn-primary"
-                  ><i class="bi bi-file-earmark-text"></i
-                ></a>
-                <a href="/user/edit-permohonan.html" class="btn btn-warning"
-                  ><i class="bi bi-pen"></i
-                ></a>
-                <a
-                  href="#"
-                  class="btn btn-danger"
-                  data-bs-toggle="modal"
-                  data-bs-target="#deleteDataModal"
-                  ><i class="bi bi-trash-fill"></i
-                ></a>
-              </td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Pengajuan B</td>
-              <td>2023-02-01</td>
-              <td>2023-02-05</td>
-              <td><span class="badge bg-secondary">Draft</span></td>
-              <td>
-                <a href="/user/detail-permohonan.html" class="btn btn-primary"
-                  ><i class="bi bi-file-earmark-text"></i
-                ></a>
-                <a href="/user/edit-permohonan.html" class="btn btn-warning"
-                  ><i class="bi bi-pen"></i
-                ></a>
-                <a
-                  href="#"
-                  class="btn btn-danger"
-                  data-bs-toggle="modal"
-                  data-bs-target="#deleteDataModal"
-                  ><i class="bi bi-trash-fill"></i
-                ></a>
-              </td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <tr>
-              <th>No</th>
-              <th>Jenis Pengajuan</th>
-              <th>Tgl Buat</th>
-              <th>Tgl Pengajuan</th>
-              <th>Status</th>
-              <th>Aksi</th>
-            </tr>
-          </tfoot>
-        </table>
-      </div>
-    </div>
-    <!-- Modal -->
-    <div
-      class="modal fade"
-      id="deleteDataModal"
-      tabindex="-1"
-      aria-labelledby="deleteDataModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="deleteDataModalLabel">Hapus Data</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
+      <div class="card shadow-lg p-5">
+        <h2 class="title-align-center">Upload Dokumen</h2>
+        <p class="text-muted title-align-center">
+          Silahkan upload dokumen untuk melengkapi permohonan anda.
+        </p>
+        <hr />
+        <div class="d-flex justify-content-between mb-4">
+          <div class="text-center mx-2">
+            <span class="badge bg-secondary">1</span>
+            <p class="small text-muted">Pilih Jenis Permohonan</p>
           </div>
-          <div class="modal-body text-center">
-            <img
-              src="{{ asset('images/No data-pana.svg') }}"
-              alt="Delete Data"
-              style="width: 400px"
-              class="img-fluid mx-auto d-block"
-            />
-            <p>Apakah Anda yakin ingin menghapus data ini?</p>
+          <div class="text-center mx-2">
+            <span class="badge bg-primary">2</span>
+            <p class="small text-muted">Upload Dokumen</p>
           </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Batal
-            </button>
-            <button type="button" class="btn btn-danger">Hapus</button>
+          <div class="text-center mx-2">
+            <span class="badge bg-secondary">3</span>
+            <p class="small text-muted">Konfirmasi</p>
           </div>
         </div>
+        <form>
+          <!-- New fields for Perubahan Data Mahasiswa -->
+          <div class="mb-3">
+            <label for="dokumen-pengajuan" class="form-label"
+              >Dokumen Pengajuan <span class="text-danger">*</span></label
+            >
+            <a href="#" class="form-label"
+              ><i class="p-1 bi bi-download"></i
+            ></a>
+            <input
+              type="file"
+              class="form-control"
+              id="dokumen-pengajuan"
+              accept=".pdf"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="dokumen-pendukung" class="form-label"
+              >Dokumen Pendukung <span class="text-danger">*</span></label
+            >
+            <a href="#" class="form-label"
+              ><i class="p-1 bi bi-download"></i
+            ></a>
+            <input
+              type="file"
+              class="form-control"
+              id="dokumen-pendukung"
+              accept=".pdf"
+            />
+          </div>
+          <div class="d-flex justify-content-between">
+            <a href="/user/buat-permohonan.html" class="btn btn-secondary"
+              >Kembali</a
+            >
+            <a
+              href="/user/konfirmasi.html"
+              type="submit"
+              class="btn btn-primary"
+              >Selanjutnya</a
+            >
+          </div>
+        </form>
       </div>
     </div>
+
     <footer class="footer footer-expand bg-light footer-light pt-4 mt-5">
       <div class="container">
         <div class="row">
@@ -275,4 +230,5 @@
       new DataTable("#example");
     </script>
   </body>
+</body>
 </html>
