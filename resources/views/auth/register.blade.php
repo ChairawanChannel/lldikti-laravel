@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ULT - LOGIN</title>
+    <title>ULT - REGISTER</title>
     <link rel="icon" href="{{ asset('images/icon-pages.png') }}" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -111,7 +111,7 @@
                       Buat Akun
                     </button>
                     <div class="mt-3 d-flex justify-content-center">
-                      <span>Sudah punya akun?</span
+                      <span>Sudah punya akun?</span>
                       ><a href="{{ route('login')}}" class="text-decoration-none"
                         >Login</a
                       >

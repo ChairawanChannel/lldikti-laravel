@@ -1,0 +1,39 @@
+# Laravel specific
+/vendor
+/node_modules
+/public/storage
+/public/hot
+/storage/*.key
+/.env
+/.env.example
+Homestead.yaml
+Homestead.json
+/.vagrant
+
+# IDE specific
+/.idea
+/.vscode
+
+# System specific
+.DS_Store
+Thumbs.db
+
+# Composer
+composer.lock
+
+# NPM
+npm-debug.log
+yarn-error.log
+
+# Laravel Mix
+/public/mix-manifest.json
+/public/hot
+
+# PHPUnit
+.phpunit.result.cache
+
+# Laravel Telescope
+/storage/telescope
+
+# Laravel Horizon
+/storage/horizon
