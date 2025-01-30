@@ -28,7 +28,8 @@
                     Silahkan buat akun anda di aplikasi Unit Layanan Terpadu
                   </p>
                   <hr />
-                  <form>
+                  <form method="POST" action="{{ route('register.store') }}">
+                    @csrf
                     <div class="mb-3 d-flex">
                       <!-- make a radio button -->
                       <div class="form-check form-check-inline">
@@ -51,21 +52,22 @@
                       </div>
                     </div>
                     <div class="mb-3">
-                      <label for="namalengkap" class="form-label"
+                      <label for="nama_lengkap" class="form-label"
                         >Nama Lengkap</label
                       >
                       <input
                         type="text"
                         class="form-control"
-                        id="namalengkap"
+                        id="nama_lengkap"
+                        name="nama_lengkap"
                         aria-describedby="emailHelp"
                       />
                     </div>
                     <div class="mb-3">
-                      <label for="notelp" class="form-label">
+                      <label for="nomor_telepon" class="form-label">
                         Nomor Telepon
                       </label>
-                      <input type="text" class="form-control" id="notelp" />
+                      <input type="text" class="form-control" id="nomor_telepon" name="nomor_telepon" />
                     </div>
 
                     <div class="mb-3">
@@ -74,20 +76,21 @@
                         type="email"
                         class="form-control"
                         id="email"
+                        name="email"
                         aria-describedby="emailHelp"
                       />
                     </div>
                     <div class="mb-3 pts-only">
-                      <label for="namapts" class="form-label"
+                      <label for="nama_pts" class="form-label"
                         >Nama PTS (PTS ONLY)</label
                       >
-                      <input type="text" class="form-control" id="namapts" />
+                      <input type="text" class="form-control" id="nama_pts" name="nama_pts" />
                     </div>
                     <div class="mb-3 pts-only">
                       <label for="jabatan" class="form-label"
                         >Jabatan (PTS ONLY)</label
                       >
-                      <input type="text" class="form-control" id="jabatan" />
+                      <input type="text" class="form-control" id="jabatan" name="jabatan" />
                     </div>
                     <div class="mb-3">
                       <label for="password" class="form-label">Password</label>
@@ -95,16 +98,18 @@
                         type="password"
                         class="form-control"
                         id="password"
+                        name="password"
                       />
                     </div>
                     <div class="mb-3">
-                      <label for="confirmpassword" class="form-label"
+                      <label for="password_confirmation" class="form-label"
                         >Confirm Password</label
                       >
                       <input
                         type="password"
                         class="form-control"
-                        id="confirmpassword"
+                        id="password_confirmation"
+                        name="password_confirmation"
                       />
                     </div>
                     <button type="submit" class="btn btn-primary w-100">
