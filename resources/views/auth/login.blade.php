@@ -47,6 +47,7 @@
                     </div>
                     <div class="mb-3">
                       <label for="password" class="form-label">Password</label>
+                      <div class="input-group">
                       <input
                         type="password"
                         class="form-control"
@@ -54,7 +55,12 @@
                         name="password"
                         autocomplete="off"
                       />
+                      <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                        <i class="bi bi-eye-slash" id="togglePasswordIcon"></i>
+                      </button>
+                      </div>
                     </div>
+                    
                     <div class="mb-3 form-check d-flex justify-content-between">
                       <div>
                         <input
@@ -134,6 +140,22 @@
           text: '{{ $errors->first() }}',
         });
       @endif
+
+
+      //fitur password visibility
+      document.getElementById('togglePassword').addEventListener('click', function () {
+                      const passwordInput = document.getElementById('password');
+                      const passwordIcon = document.getElementById('togglePasswordIcon');
+                      if (passwordInput.type === 'password') {
+                        passwordInput.type = 'text';
+                        passwordIcon.classList.remove('bi-eye-slash');
+                        passwordIcon.classList.add('bi-eye');
+                      } else {
+                        passwordInput.type = 'password';
+                        passwordIcon.classList.remove('bi-eye');
+                        passwordIcon.classList.add('bi-eye-slash');
+                      }
+                      });
     </script>
   </body>
 </html>

@@ -96,25 +96,35 @@
                     </div>
                     <div class="mb-3">
                       <label for="password" class="form-label">Password</label>
-                      <input
-                        type="password"
-                        class="form-control"
-                        id="password"
-                        name="password"
-                        autocomplete="off"
-                      />
+                      <div class="input-group">
+                        <input
+                          type="password"
+                          class="form-control"
+                          id="password"
+                          name="password"
+                          autocomplete="off"
+                        />
+                        <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                          <i class="bi bi-eye-slash" id="togglePasswordIcon"></i>
+                        </button>
+                      </div>
                     </div>
                     <div class="mb-3">
                       <label for="password_confirmation" class="form-label"
                         >Confirm Password</label
                       >
-                      <input
-                        type="password"
-                        class="form-control"
-                        id="password_confirmation"
-                        name="password_confirmation"
-                        autocomplete="off"
-                      />
+                      <div class="input-group">
+                        <input
+                          type="password"
+                          class="form-control"
+                          id="password_confirmation"
+                          name="password_confirmation"
+                          autocomplete="off"
+                        />
+                        <button class="btn btn-outline-secondary" type="button" id="togglePasswordConfirmation">
+                          <i class="bi bi-eye-slash" id="togglePasswordConfirmationIcon"></i>
+                        </button>
+                      </div>
                     </div>
                     <button type="submit" class="btn btn-primary w-100">
                       Buat Akun
@@ -203,6 +213,31 @@
           text: '{{ $errors->first() }}',
         });
       @endif
+
+      //fitur password visibility
+      document.addEventListener("DOMContentLoaded", function () {
+  const togglePassword = document.getElementById("togglePassword");
+  const password = document.getElementById("password");
+  const togglePasswordIcon = document.getElementById("togglePasswordIcon");
+
+  togglePassword.addEventListener("click", function () {
+    const type = password.getAttribute("type") === "password" ? "text" : "password";
+    password.setAttribute("type", type);
+    togglePasswordIcon.classList.toggle("bi-eye");
+    togglePasswordIcon.classList.toggle("bi-eye-slash");
+  });
+
+  const togglePasswordConfirmation = document.getElementById("togglePasswordConfirmation");
+  const passwordConfirmation = document.getElementById("password_confirmation");
+  const togglePasswordConfirmationIcon = document.getElementById("togglePasswordConfirmationIcon");
+
+  togglePasswordConfirmation.addEventListener("click", function () {
+    const type = passwordConfirmation.getAttribute("type") === "password" ? "text" : "password";
+    passwordConfirmation.setAttribute("type", type);
+    togglePasswordConfirmationIcon.classList.toggle("bi-eye");
+    togglePasswordConfirmationIcon.classList.toggle("bi-eye-slash");
+  });
+});
     </script>
   </body>
 </html>
