@@ -68,7 +68,7 @@
                       <label for="nomor_telepon" class="form-label">
                         Nomor Telepon
                       </label>
-                      <input type="text" class="form-control" id="nomor_telepon" name="nomor_telepon" />
+                      <input type="text" class="form-control" id="nomor_telepon" name="nomor_telepon" inputmode="numeric" autocomplete="off"/>
                     </div>
 
                     <div class="mb-3">
@@ -79,19 +79,20 @@
                         id="email"
                         name="email"
                         aria-describedby="emailHelp"
+                        autocomplete="off"
                       />
                     </div>
                     <div class="mb-3 pts-only">
                       <label for="nama_pts" class="form-label"
                         >Nama PTS (PTS ONLY)</label
                       >
-                      <input type="text" class="form-control" id="nama_pts" name="nama_pts" />
+                      <input type="text" class="form-control" id="nama_pts" name="nama_pts" autocomplete="off"/>
                     </div>
                     <div class="mb-3 pts-only">
                       <label for="jabatan" class="form-label"
                         >Jabatan (PTS ONLY)</label
                       >
-                      <input type="text" class="form-control" id="jabatan" name="jabatan" />
+                      <input type="text" class="form-control" id="jabatan" name="jabatan" autocomplete="off"/>
                     </div>
                     <div class="mb-3">
                       <label for="password" class="form-label">Password</label>
@@ -100,6 +101,7 @@
                         class="form-control"
                         id="password"
                         name="password"
+                        autocomplete="off"
                       />
                     </div>
                     <div class="mb-3">
@@ -111,6 +113,7 @@
                         class="form-control"
                         id="password_confirmation"
                         name="password_confirmation"
+                        autocomplete="off"
                       />
                     </div>
                     <button type="submit" class="btn btn-primary w-100">

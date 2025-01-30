@@ -42,6 +42,7 @@
                         id="email"
                         name="email"
                         aria-describedby="emailHelp"
+                        autocomplete="off"
                       />
                     </div>
                     <div class="mb-3">
@@ -51,6 +52,7 @@
                         class="form-control"
                         id="password"
                         name="password"
+                        autocomplete="off"
                       />
                     </div>
                     <div class="mb-3 form-check d-flex justify-content-between">
@@ -60,6 +62,7 @@
                           class="form-check-input"
                           id="remember"
                           name="remember"
+                          
                         />
                         <label class="form-check-label" for="remember"
                           >Remember me</label
