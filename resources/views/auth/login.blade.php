@@ -15,6 +15,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
   </head>
   <body>
     <div class="container">
@@ -29,7 +30,8 @@
                     Silahkan Login di aplikasi Unit Layanan Terpadu
                   </p>
                   <hr />
-                  <form>
+                  <form method="POST" action="{{ route('login') }}">
+                    @csrf
                     <div class="mb-3">
                       <label for="email" class="form-label"
                         >Email address</label
@@ -38,6 +40,7 @@
                         type="email"
                         class="form-control"
                         id="email"
+                        name="email"
                         aria-describedby="emailHelp"
                       />
                     </div>
@@ -47,6 +50,7 @@
                         type="password"
                         class="form-control"
                         id="password"
+                        name="password"
                       />
                     </div>
                     <div class="mb-3 form-check d-flex justify-content-between">
@@ -55,6 +59,7 @@
                           type="checkbox"
                           class="form-check-input"
                           id="remember"
+                          name="remember"
                         />
                         <label class="form-check-label" for="remember"
                           >Remember me</label
@@ -111,5 +116,21 @@
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+    <script>
+      @if(session('status'))
+        Swal.fire({
+          icon: 'success',
+          title: 'Success',
+          text: '{{ session('status') }}',
+        });
+      @elseif($errors->any())
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: '{{ $errors->first() }}',
+        });
+      @endif
+    </script>
   </body>
 </html>

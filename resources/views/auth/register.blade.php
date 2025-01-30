@@ -14,6 +14,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
   </head>
   <body>
     <div class="container">
@@ -155,6 +156,7 @@
       </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const ptsRadio = document.getElementById("pts");
@@ -184,6 +186,20 @@
 
         togglePtsFields(); // Initial check
       });
+
+      @if(session('status'))
+        Swal.fire({
+          icon: 'success',
+          title: 'Success',
+          text: '{{ session('status') }}',
+        });
+      @elseif($errors->any())
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: '{{ $errors->first() }}',
+        });
+      @endif
     </script>
   </body>
 </html>
