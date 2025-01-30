@@ -131,7 +131,7 @@
                     </button>
                     <div class="mt-3 d-flex justify-content-center">
                       <span>Sudah punya akun?</span>
-                      ><a href="{{ route('login')}}" class="text-decoration-none"
+                      <a href="{{ route('login')}}" class="text-decoration-none"
                         >Login</a
                       >
                     </div>
