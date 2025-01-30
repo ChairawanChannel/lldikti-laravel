@@ -6,7 +6,7 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\permohonanController;
 
 Route::get('/', [AuthenticatedSessionController::class, 'create'])
-        ->name('login');
+    ->name('login');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -21,4 +21,4 @@ Route::middleware('auth')->group(function () {
 Route::get('buat-permohonan', [permohonanController::class, 'show'])->name('buat-permohonan');
 Route::post('form-permohonan', [permohonanController::class, 'showForm'])->name('isi-form');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
