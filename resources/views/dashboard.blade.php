@@ -66,7 +66,7 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Akun
+              {{ Auth::user()->nama_lengkap }}
               </a>
               <ul
                 class="dropdown-menu dropdown-menu-end"

@@ -111,7 +111,7 @@
                         >
                         <select class="form-select" id="jenispermohonan" required>
                             <option selected>Pilih Jenis Permohonan</option>
-                            <option value="1">Perubahan Data Mahasiswa</option>
+                            <option value="perubahan">Perubahan Data Mahasiswa</option>
                         </select>
                     </div>
                     <a

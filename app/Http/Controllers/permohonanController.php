@@ -17,4 +17,6 @@ class permohonanController extends Controller
         return view('isi-formulir');
     }
 
+
+   
 }
