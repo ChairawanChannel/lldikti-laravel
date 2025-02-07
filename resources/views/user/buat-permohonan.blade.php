@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
     <link rel="icon" href="{{ asset('images/icon-pages.png') }}" />
 
-    <title>Dashboard - Tamu</title>
+    <title>Dashboard - Buat Permohonan</title>
 </head>
 
 <body class="no-background">
@@ -36,7 +36,8 @@
                     <p class="small text-muted">Konfirmasi</p>
                 </div>
             </div>
-            <form>
+            <form action="{{ route('isi-form') }}" method="POST">
+                @csrf
                 <div class="mb-3">
                     <label for="jenispermohonan" class="form-label">Jenis Permohonan <span
                             class="text-danger">*</span></label>
@@ -45,7 +46,7 @@
                         <option value="1">Perubahan Data Mahasiswa</option>
                     </select>
                 </div>
-                <a href="/user/isi-formulir.html" type="submit" class="btn btn-primary w-100">Lanjut</a>
+                <button type="submit" class="btn btn-primary w-100">Lanjut</button>
             </form>
         </div>
     </div>

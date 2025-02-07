@@ -25,47 +25,37 @@
                         <th>No</th>
                         <th>Jenis Pengajuan</th>
                         <th>Tgl Buat</th>
-                        <th>Tgl Pengajuan</th>
                         <th>Status</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Perubahan Data Mahasiswa</td>
-                        <td>2023-01-01</td>
-                        <td>2023-01-05</td>
-                        <td><span class="badge bg-warning">Pending</span></td>
-                        <td>
-                            <a href="/user/detail-permohonan.html" class="btn btn-primary"><i
-                                    class="bi bi-file-earmark-text"></i></a>
-                            <a href="/user/edit-permohonan.html" class="btn btn-warning"><i class="bi bi-pen"></i></a>
-                            <a href="#" class="btn btn-danger" data-bs-toggle="modal"
-                                data-bs-target="#deleteDataModal"><i class="bi bi-trash-fill"></i></a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Pengajuan B</td>
-                        <td>2023-02-01</td>
-                        <td>2023-02-05</td>
-                        <td><span class="badge bg-secondary">Draft</span></td>
-                        <td>
-                            <a href="/user/detail-permohonan.html" class="btn btn-primary"><i
-                                    class="bi bi-file-earmark-text"></i></a>
-                            <a href="/user/edit-permohonan.html" class="btn btn-warning"><i class="bi bi-pen"></i></a>
-                            <a href="#" class="btn btn-danger" data-bs-toggle="modal"
-                                data-bs-target="#deleteDataModal"><i class="bi bi-trash-fill"></i></a>
-                        </td>
-                    </tr>
+                    @foreach ($permohonan as $index => $item)
+                        <tr>
+                            <td>{{ $index + 1 }}</td>
+                            <td>{{ $item->jenis_permohonan }}</td>
+                            <td>{{ $item->created_at }}</td>
+                            <td>
+                                @if ($item->status == 'submitted')
+                                    <span class="badge bg-success">Submitted</span>
+                                @endif
+                            </td>
+                            <td>
+                                <a href="/user/detail-permohonan/{{ $item->id }}" class="btn btn-primary"><i
+                                        class="bi bi-file-earmark-text"></i></a>
+                                <a href="/user/edit-permohonan/{{ $item->id }}" class="btn btn-warning"><i
+                                        class="bi bi-pen"></i></a>
+                                <a href="#" class="btn btn-danger" data-bs-toggle="modal"
+                                    data-bs-target="#deleteDataModal"><i class="bi bi-trash-fill"></i></a>
+                            </td>
+                        </tr>
+                    @endforeach
                 </tbody>
                 <tfoot>
                     <tr>
                         <th>No</th>
                         <th>Jenis Pengajuan</th>
                         <th>Tgl Buat</th>
-                        <th>Tgl Pengajuan</th>
                         <th>Status</th>
                         <th>Aksi</th>
                     </tr>
